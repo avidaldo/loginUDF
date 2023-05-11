@@ -1,11 +1,11 @@
-package com.example.myapplication.ui.state
+package com.example.loginudf.ui.state
 
 import android.util.Patterns
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
-import com.example.myapplication.data.model.User
+import com.example.loginudf.data.model.User
 
 class LoginViewModel : ViewModel() {
 

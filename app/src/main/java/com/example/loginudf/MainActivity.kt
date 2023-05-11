@@ -1,4 +1,4 @@
-package com.example.myapplication
+package com.example.loginudf
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -7,8 +7,8 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.ui.Modifier
-import com.example.myapplication.ui.elements.AppContent
-import com.example.myapplication.ui.theme.MyApplicationTheme
+import com.example.loginudf.ui.elements.AppContent
+import com.example.loginudf.ui.theme.MyApplicationTheme
 
 class MainActivity : ComponentActivity() {
 

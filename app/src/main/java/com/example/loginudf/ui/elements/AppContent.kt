@@ -1,4 +1,4 @@
-package com.example.myapplication.ui.elements
+package com.example.loginudf.ui.elements
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -14,7 +14,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.lifecycle.viewmodel.compose.viewModel
-import com.example.myapplication.ui.state.LoginViewModel
+import com.example.loginudf.ui.state.LoginViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable

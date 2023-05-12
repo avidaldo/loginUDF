@@ -11,17 +11,7 @@ https://www.youtube.com/watch?v=iiCOIGNQInw
 
 - Si las credenciales son incorrectas, se mostrará un texto indicando el error encima del formulario de autenticación, y los dos campos de texto mostrarán el error.
 
-<table>
-  <tr>
-    <td><img src="img/1.png" style="width:40%; height:40%;"></td>
-    <td><img src="img/2.png" style="width:40%; height:40%;"></td>
-  </tr>
-  <tr>
-    <td><img src="img/3.png" style="width:40%; height:40%;"></td>
-    <td><img src="img/4.png" style="width:40%; height:40%;"></td>
-  </tr>
-  <tr>
-    <td><img src="img/5.png" style="width:40%; height:40%;"></td>
-    <td><img src="img/6.png" style="width:40%; height:40%;"></td>
-  </tr>
-</table>
+| ![Image 1](img/1.png) | ![Image 2](img/2.png) |
+| --- | --- |
+| ![Image 3](img/3.png) | ![Image 4](img/4.png) |
+| ![Image 5](img/5.png) | ![Image 6](img/6.png) |

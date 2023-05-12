@@ -1,6 +1,9 @@
-# loginUDF
+# Login simple con mutableState en ViewModel (Unidirectional Data Flow)
 
-Login en una única pantalla (sin navegación).
+Vídeo con solución:
+https://www.youtube.com/watch?v=iiCOIGNQInw
+
+
 
 - El botón de Login solo estará activado si se introduce un email y válido y una contraseña de 8 caracteres o más.
 
@@ -8,9 +11,17 @@ Login en una única pantalla (sin navegación).
 
 - Si las credenciales son incorrectas, se mostrará un texto indicando el error encima del formulario de autenticación, y los dos campos de texto mostrarán el error.
 
-<img src="img/1.png"  width="40%" height="40%">
-<img src="img/2.png"  width="40%" height="40%">
-<img src="img/3.png"  width="40%" height="40%">
-<img src="img/4.png"  width="40%" height="40%">
-<img src="img/5.png"  width="40%" height="40%">
-<img src="img/6.png"  width="40%" height="40%">
+<table>
+  <tr>
+    <td><img src="img/1.png" style="width:40%; height:40%;"></td>
+    <td><img src="img/2.png" style="width:40%; height:40%;"></td>
+  </tr>
+  <tr>
+    <td><img src="img/3.png" style="width:40%; height:40%;"></td>
+    <td><img src="img/4.png" style="width:40%; height:40%;"></td>
+  </tr>
+  <tr>
+    <td><img src="img/5.png" style="width:40%; height:40%;"></td>
+    <td><img src="img/6.png" style="width:40%; height:40%;"></td>
+  </tr>
+</table>

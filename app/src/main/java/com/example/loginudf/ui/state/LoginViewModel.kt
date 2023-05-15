@@ -6,11 +6,14 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.setValue
 import androidx.lifecycle.ViewModel
 import com.example.loginudf.data.model.User
+import com.example.loginudf.data.repository.UserRepository
 
 
 private const val MIN_SIZE_PASSWORD = 7
 
 class LoginViewModel : ViewModel() {
+
+    val userRepository = UserRepository()
 
     private var _emailString by mutableStateOf("")
     val emailString get() = _emailString
@@ -33,12 +36,13 @@ class LoginViewModel : ViewModel() {
 
 
     fun loggin() {
-        /* TODO: esta parte debería consultar un repository de la capa de datos en lugar de
-             tener el nombre hardodeado, ya que normalmente el login se realizará contra un backend */
-        if (_emailString == "pepe@pepe.com" && passwordString == "12345678") {
-            _loggedUser = User(_emailString, _passwordString, "Pepe")
+        _loggedUser = userRepository.authenticateUser(_emailString, _passwordString)
+        _loggedUser?.let {
             _logginError = false
-        } else _logginError = true
+        } ?:
+        {
+            _logginError = true
+        }
     }
 
     fun logOut() {

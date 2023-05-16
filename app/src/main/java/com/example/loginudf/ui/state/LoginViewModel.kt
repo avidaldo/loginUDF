@@ -13,7 +13,7 @@ private const val MIN_SIZE_PASSWORD = 7
 
 class LoginViewModel : ViewModel() {
 
-    val userRepository = UserRepository()
+    private val userRepository = UserRepository()
 
     private var _emailString by mutableStateOf("")
     val emailString get() = _emailString
@@ -37,12 +37,7 @@ class LoginViewModel : ViewModel() {
 
     fun loggin() {
         _loggedUser = userRepository.authenticateUser(_emailString, _passwordString)
-        _loggedUser?.let {
-            _logginError = false
-        } ?:
-        {
-            _logginError = true
-        }
+        _logginError = _loggedUser?.let { false } ?: true
     }
 
     fun logOut() {

@@ -6,5 +6,8 @@ class UserRepository() : IUserRepository {
     private val apiDataSource = ApiDataSourceMock()
 
     override fun authenticateUser(email: String, password: String) =
-        apiDataSource.authenticateUser(email, password)
+        apiDataSource.validUsersInRemoteServer[email]?.run {
+            if (this.password == password) this else null
+        }
+
 }

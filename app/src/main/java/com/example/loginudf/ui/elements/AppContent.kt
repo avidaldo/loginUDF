@@ -49,13 +49,8 @@ fun AppContent() {
                 Text(text = stringResource(R.string.acceso_correcto))
                 // TODO: Contenido para usuarios loggeados
             } ?: LoginBlock(
-                emailString = vm.emailString,
-                changeEmailString = { vm.changeEmailString(it) },
-                passwordString = vm.passwordString,
-                changePasswordString = { vm.changePasswordString(it) },
                 logginError = vm.logginError,
-                enableLoggin = vm.validEmailAndPassword(),
-                onLoggin = { vm.loggin() },
+                onLoggin = { email, password -> vm.loggin(email, password) },
             )
 
 

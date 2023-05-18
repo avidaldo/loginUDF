@@ -10,6 +10,8 @@ import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
@@ -23,16 +25,17 @@ import com.example.loginudf.ui.state.LoginViewModel
 fun AppContent() {
 
     val vm: LoginViewModel = viewModel()
+    val uiState by vm.gameUiState.collectAsState()
 
     Scaffold(topBar = {
         TopAppBar(
             title = {
                 Text(
-                    text = vm.loggedUser?.name ?: stringResource(R.string.login)
+                    text = uiState.loggedUser?.name ?: stringResource(R.string.login)
                 )
             },
             actions = {
-                vm.loggedUser?.let {
+                uiState.loggedUser?.let {
                     Button(onClick = { vm.logOut() }) {
                         Text(text = stringResource(R.string.log_out))
                     }
@@ -45,15 +48,15 @@ fun AppContent() {
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
-            vm.loggedUser?.let {
+            uiState.loggedUser?.let {
                 Text(text = stringResource(R.string.acceso_correcto))
                 // TODO: Contenido para usuarios loggeados
             } ?: LoginBlock(
-                emailString = vm.emailString,
+                emailString = uiState.emailString,
                 changeEmailString = { vm.changeEmailString(it) },
-                passwordString = vm.passwordString,
+                passwordString = uiState.passwordString,
                 changePasswordString = { vm.changePasswordString(it) },
-                logginError = vm.logginError,
+                logginError = uiState.logginError,
                 enableLoggin = vm.validEmailAndPassword(),
                 onLoggin = { vm.loggin() },
             )
